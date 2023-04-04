@@ -1,0 +1,5 @@
+package com.example.ms1.repository;
+
+public interface UserInterface {
+
+}

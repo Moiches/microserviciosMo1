@@ -1,0 +1,8 @@
+# Oracle settings
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=TESTDB_DEV
+spring.datasource.password=test4231
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+
+

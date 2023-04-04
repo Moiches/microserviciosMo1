@@ -1,0 +1,52 @@
+package com.example.ms1.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.example.ms1.entity.User;
+import com.example.ms1.models.Carro;
+import com.example.ms1.repository.UserInterface;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserInterface userRepository;
+
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@SuppressWarnings("unchecked")
+	public List<Carro> getCarrosByUser(Long usuarioId){
+		List<Carro> carros = restTemplate.getForObject("http://locaahost:8001//api/v1/carros" + usuarioId, List.class);
+		return carros;
+	}
+	
+	public List<User> getAll() {
+		return userRepository.findAll();
+	}
+
+	public User getById(Long id) {
+
+		return userRepository.findById(id).orElse(null);
+	}
+
+	public User save(User user) {
+		User save = userRepository.save(user);
+		return save;
+	}
+
+	public void deleteUser() {
+		userRepository.deleteAll();
+	}
+
+	public void deleteById(Long id) {
+
+		userRepository.deleteById(id);
+
+	}
+
+}

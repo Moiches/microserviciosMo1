@@ -1,0 +1,5 @@
+package com.example.ms1.entity;
+
+public class User {
+
+}

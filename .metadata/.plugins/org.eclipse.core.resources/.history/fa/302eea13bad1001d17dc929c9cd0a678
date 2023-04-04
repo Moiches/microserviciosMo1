@@ -1,0 +1,13 @@
+package com.example.ms1.feignclients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.ms1.models.Carro;
+
+@FeignClient(name = "carro-service",url = "http://localhost:8001")
+@RequestMapping("/api/v1/carros")
+public interface CarroFeignClient {
+
+	public Carro save(Long usuarioId, Carro carro);
+}

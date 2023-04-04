@@ -1,0 +1,21 @@
+package com.example.ms3.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table(name="moto")
+public class Moto {
+
+	private long id;
+	
+}

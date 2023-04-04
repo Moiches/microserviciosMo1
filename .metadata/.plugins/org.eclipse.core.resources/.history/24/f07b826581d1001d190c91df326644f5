@@ -1,0 +1,16 @@
+package com.example.ms3.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.ms3.repository.MotoRepository;
+
+@Service
+public class MotoService {
+
+	@Autowired
+	private MotoRepository motoRepository;
+	
+	
+	
+}

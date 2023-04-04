@@ -1,0 +1,27 @@
+package com.example.ms1.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Data
+@NoArgsConstructor
+@Getter
+@Setter
+public class User {
+
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Integer id;
+	@Column(name = "name")
+	private String name;
+	@Column(name = "email")
+	private String email;
+	
+}

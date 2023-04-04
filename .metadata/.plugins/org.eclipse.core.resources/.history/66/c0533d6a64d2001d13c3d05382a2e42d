@@ -1,0 +1,10 @@
+package com.example.ms1.feignclients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name = "moto-service", url = "	")
+public interface MotoFeignClient {
+
+	
+	
+}

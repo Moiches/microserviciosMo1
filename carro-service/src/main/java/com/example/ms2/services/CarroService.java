@@ -1,0 +1,46 @@
+package com.example.ms2.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.ms2.entity.Carro;
+import com.example.ms2.repositories.CarroRepository;
+
+@Service
+public class CarroService {
+
+	@Autowired
+	private CarroRepository carroRepository;
+	
+	public List<Carro> getAll() {
+		return carroRepository.findAll();
+	}
+
+	public Carro getById(Long id) {
+
+		return carroRepository.findById(id).orElse(null);
+	}
+
+	public List<Carro> getByUsuarioId(Long usuarioId){
+		return carroRepository.findByUsuarioId(usuarioId);
+	}
+	
+	public Carro save(Carro carro) {
+		Carro save = carroRepository.save(carro);
+		return save;
+	}
+
+	public void deleteCarro() {
+		carroRepository.deleteAll();
+	}
+
+	public void deleteById(Long id) {
+
+		carroRepository.deleteById(id);
+
+	}
+
+	
+}

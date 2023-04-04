@@ -1,0 +1,5 @@
+package com.example.ms1.feignclients;
+
+public interface MotoFeignClient {
+
+}

@@ -1,0 +1,25 @@
+package com.example.ms1.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.ms1.entity.User;
+import com.example.ms1.repository.UserInterface;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserInterface userRepository;
+	
+	public List<User> getAll(){
+		return userRepository.findAll();
+	}
+	
+	public User getById(Integer id) {
+		return userRepository.findById(id);
+	}
+	
+}
