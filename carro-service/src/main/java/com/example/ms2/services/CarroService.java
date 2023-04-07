@@ -42,5 +42,8 @@ public class CarroService {
 
 	}
 
+	public Carro getByMarca(String marca) {
+		return carroRepository.findByMarca(marca);
+	}
 	
 }

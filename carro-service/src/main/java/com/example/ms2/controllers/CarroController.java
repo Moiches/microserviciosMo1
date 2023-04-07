@@ -58,6 +58,12 @@ public class CarroController {
 		return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 	}
 	
+	@GetMapping("/marca/{marca}")
+	
+	public ResponseEntity<Carro> deleteByMarca(@PathVariable("marca") String marca){
+		
+		return new ResponseEntity<Carro>(carroService.getByMarca(marca), HttpStatus.OK);
+	}
 
 	
 }
